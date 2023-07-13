@@ -9,17 +9,41 @@ html {
 *, *:before, *:after {
   box-sizing: inherit;
 }
-
-/*
- * Global layout stuff
- */
-
-body {
-  color: #545149;
-  background-color: #f4f1ec;
+nav {
+  display: flex;
+  align-items: center;
+  background-color: #3e4b95;
+  height: 60px;
+  padding: 0 20px;
+}
+.logo {
+  font-family: 'Bungee', sans-serif;
   font-size: 24px;
+  color: #ffffff;
+}
+main {
+  width: 90%;
+  margin: 0 auto;
+  background-color: inherit;
 }
 
+main p, main h1, main h2 {
+  margin-top: 20px;
+}
+
+body {
+  color: #ffffff;
+  background-color: #3e4b95;
+  font-size: 24px;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.tweet-text {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 18px;
+  color: #ffffff;
+  margin-left: 1100px;
+}
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
