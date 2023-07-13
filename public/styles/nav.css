@@ -1,0 +1,31 @@
+nav {
+  position: fixed;
+  width: 100%;
+  height: 120px;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  padding: 0 1.5em;
+}
+
+nav .nav-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav .logo {
+  font-family: 'Bungee', sans-serif;
+  font-size: 24px;
+}
+
+nav .tweet-text {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 18px;
+}
+.angle-down-container {
+  text-align: center;
+  margin-top: 10px;
+}
+.angle-down-container i {
+  font-size: 24px;
+}
