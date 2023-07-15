@@ -1,3 +1,4 @@
+
 $(document).ready(function() {
   function countCharacters() {
     var composer = $(this);
@@ -6,7 +7,7 @@ $(document).ready(function() {
 
     counter.text(remainingChars);
 
-    if (remainingChars < 0) {
+    if (remainingChars < 0 || remainingChars > 140) {
       counter.addClass('invalid');
     } else {
       counter.removeClass('invalid');
