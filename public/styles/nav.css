@@ -4,9 +4,21 @@ nav {
   height: 120px;
   background-color: #4056A1;
   color: #FFFFFF;
-  padding: 0 1.5em;
+  padding: 0 1.5em; 
+  height: 120px;
+  width: 100%;
+}
+body {
+  width: 100%;
+  color: #545149;
+  background-color: #f4f1ec;
+  font-size: 24px;
+  font-family: 'Source Sans 3', sans-serif;
 }
 
+nav {
+  font-family: 'Bungee', sans-serif;
+}
 nav .nav-content {
   display: flex;
   align-items: center;
@@ -22,10 +34,4 @@ nav .tweet-text {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 18px;
 }
-.angle-down-container {
-  text-align: center;
-  margin-top: 10px;
-}
-.angle-down-container i {
-  font-size: 24px;
-}
+
