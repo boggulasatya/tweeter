@@ -3,9 +3,55 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+/* eslint-env jquery*/
+//accepting jquery --above comment//
+$(document).ready(function () {
+  const handleFormSubmit = function (event) {
+    event.preventDefault();
+    const tweetText = $('#tweet-text').val();
 
-$(document).ready(function() {
-  const createTweetElement = function(tweet) {
+    //Send the tweet data using AJAX
+    $.ajax({
+      url: '/tweets',
+      method: 'POST',
+      data: $(this).serialize(),
+      success: function(response) {
+        //handle response forms server
+        console.log(response);
+        $('#tweet-text').val('');
+        loadTweets();
+      },
+    });
+  };
+  //Even listener for form submission
+  $('form').submit(handleFormSubmit);
+
+  //rendertweets
+  const renderTweets = function(tweets) {
+    // loops through tweets
+    // calls createTweetElement for each tweet
+    // takes return value and appends it to the tweets container
+
+    const $tweetsContainer = $('.tweets');
+    for (let tweet of tweets) {
+      let $tweet = createTweetElement(tweet);
+      $tweetsContainer.append($tweet);
+    }
+  };
+
+  //Load tweets to fetch the tweets from server
+  const loadTweets = function() {
+    $.ajax({
+      url: '/tweets',
+      method: 'GET',
+      success: function(response) {
+        renderTweets(response);
+      }
+    });
+  };
+
+  const createTweetElement = function (tweet) {
+    // console.log(tweet);
     const $tweet = $(`
       <article class="tweet">
         <header>
@@ -19,7 +65,7 @@ $(document).ready(function() {
           <p>${tweet.content.text}</p>
         </div>
         <footer>
-          <p class="tweet-created-at">${timeago.format(tweet.created_at)}</p>
+        <p class="timeago">${timeago.format(tweet.created_at)}</p>
           <div class="tweet-icons">
             <i class="fas fa-flag"></i>
             <i class="fas fa-retweet"></i>
@@ -28,42 +74,9 @@ $(document).ready(function() {
         </footer>
       </article>
     `);
-  
+
     return $tweet;
   };
   
-  const renderTweets = function(tweets) {
-    for (let tweet of tweets) {
-      let $tweet = createTweetElement(tweet);
-      $('.tweets').append($tweet);
-    }
-    $('.tweet-created-at').timeago();
-  };
-  
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png",
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd"
-      },
-      "content": {
-        "text": "Je pense, donc je suis"
-      },
-      "created_at": 1461113959088
-    }
-  ];
-  
-  renderTweets(data);
+  loadTweets();
 });
