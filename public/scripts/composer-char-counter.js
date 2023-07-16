@@ -1,5 +1,4 @@
-
-$(document).ready(function() {
+$(document).ready(function () {
   function countCharacters() {
     var composer = $(this);
     var counter = composer.closest('.new-tweet').find('.counter');
