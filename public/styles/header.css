@@ -2,7 +2,8 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: -50px !important;
+  padding-top: 101px;
+  margin-top: 0px !important;
   margin-left: 50px !important;
     width: calc(30% - 50px) !important;
   background-color: #ff7f50;

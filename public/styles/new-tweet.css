@@ -127,8 +127,7 @@
   color: gray; 
   margin-right: 700px;
 }
-
-.tweets .tweet .tweet-username {
+p.tweet-username {
   font-size: 14px;
   color: #888; 
   margin-right: 800px;

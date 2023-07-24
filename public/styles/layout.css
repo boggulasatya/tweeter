@@ -84,10 +84,6 @@ form {
 }
 
 /*overriding*/
-header {
-  width: 30% !important;
-  margin: 0 !important;
-}
 body {
   display: flex !important;
   flex-flow: wrap !important;
