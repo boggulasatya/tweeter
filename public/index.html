@@ -37,40 +37,40 @@
 </head>
 
 <body>
-  <!-- Top nav bar (fixed) -->
-  <nav>
-    <div class="nav-content">
-      <span class="logo">tweeter</span>
-      <span class="tweet-text">Write a new tweet </span>
-      <div class="angle-down-container">
-        <i class="fas fa-angle-double-down"></i>
+
+</body> <!-- Top nav bar (fixed) -->
+<nav>
+  <div class="nav-content">
+    <span class="logo">tweeter</span>
+    <span class="tweet-text">Write a new tweet
+    </span>
+    <div class="angle-down-container">
+       <i class="fas fa-angle-double-down"></i>
       </div>
-    </div>
-  </nav>
+  </div>
+</nav>
+<header>
+<!-- Page-specific (main) content here -->
+ <div class="avatar">
+  <div id="avatar-name"></div> 
+  <div class="nav-content">
+    <img src="/images/profile-hex.png">
+     <div class="name-container"></div> 
+     <h2 class="name">Satya</h2>
+     </div>
+  </div>
+  </header>
   <main class="container">
-    <div class="avatar">
-       <!-- Your avatar content goes here -->
-      <div id="avatar-name" class="avatar-name"></div>
-      <div class="nav-content">
-        
-        <img src="/images/profile-hex.png"><div class="name-container">
-           <h2 class="name">Satya</h2>  
-          </div>
-        </div>
-      </div>
-      <div class="tweet-sections">
+    <div class="tweet-sections">
       <section class="new-tweet">
         <div id="error-message" class="error-message"></div>
-        
-        <h2 class="tweet-heading">Compose Tweet</h2> <form>
-          <label for="tweet-text">What are
-            you humming about?</label>
-             <textarea name="text" id="tweet-text"></textarea>
+        <h2 class="tweet-heading">Compose Tweet</h2> 
+        <form>
+          <label for="tweet-text">What are you humming about?</label>
+          <textarea name="text" id="tweet-text"></textarea>
           <div>
             <div class="tweet-button" id="tweet-button">
-              <button type="submit"
-                style="background-color: blue; color: white; font-size: medium; font-weight: bold;">Tweet</button>
-              <output id="counter" class="counter" for="tweet-text">140</output>
+              <button type="submit"style="background-color: blue; color: white; font-size: medium; font-weight: bold;">Tweet</button><output id="counter" class="counter" for="tweet-text">140</output>
             </div>
           </div>
         </form>
@@ -79,6 +79,6 @@
         <!-- Tweets will be dynamically rendered here -->
       </section>
     </div>
+  </main>
    </main>
-  <!-- Page-specific (main) content here -->
-</body>
+  </body>
