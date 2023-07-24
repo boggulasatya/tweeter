@@ -3,12 +3,16 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
- html {
+html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
+
 nav {
   display: flex;
   align-items: center;
@@ -16,6 +20,7 @@ nav {
   height: 120px;
   padding: 1.5em;
 }
+
 .logo {
   font-family: 'Bungee', sans-serif;
   font-size: 24px;
@@ -24,13 +29,17 @@ nav {
 
 .main-container {
   width: 90%;
-  margin: 0 auto; /* Center-align the main container */
-}
-main {
- padding: 20px;
+  margin: 0 auto;
+  /* Center-align the main container */
 }
 
-main p, main h1, main h2 {
+main {
+  padding: 20px;
+}
+
+main p,
+main h1,
+main h2 {
   margin-top: 0;
 }
 
@@ -46,10 +55,12 @@ body {
 nav {
   font-family: 'Bungee', sans-serif;
 }
+
 .header-main {
   padding: 20px;
   display: flex;
-  align-items: center; /* Center items vertically */
+  align-items: center;
+  /* Center items vertically */
 }
 
 .tweet-text {
@@ -65,28 +76,49 @@ form {
   margin: 0 auto;
 }
 
-  .container {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start; 
-    justify-content: space-between; 
-  }
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+/*overriding*/
+header {
+  width: 30% !important;
+  margin: 0 !important;
+}
+body {
+  display: flex !important;
+  flex-flow: wrap !important;
+}
+
+nav {
+  width: 100% !important;
+  margin: 0 !important;
+}
 
 
- /* Tablet Styles  */
+main {
+  width: 70% !important;
+  margin: 0 !important;
+  padding-top: 202px;
+}
 
-  body {
-    width: 100%;
-    align-items: center;
-    flex-direction: row;
-    justify-content: center;
-  }
+/* Tablet Styles  */
+
+body {
+  width: 100%;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+}
 
 
 /* Desktop Styles */
-  @media only screen and (max-width: 1024px) {
-    .container {
-      flex-direction: column;
-      justify-content: space-between;
-    }
+@media only screen and (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    justify-content: space-between;
   }
+}
