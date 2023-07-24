@@ -5,11 +5,34 @@
  */
 /* eslint-env jquery*/
 //accepting jquery --above comment//
-$(document).ready(function () {
-  const handleFormSubmit = function (event) {
+$(document).ready(function() {
+  const escape = function(str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
+  // Hide the error message
+  const hideErrorMessage = function() {
+    const $errorMessage = $('#error-message');
+    $errorMessage.slideUp();
+  };
+  const handleFormSubmit = function(event) {
     event.preventDefault();
     const tweetText = $('#tweet-text').val();
-
+    hideErrorMessage();
+   
+    // validation messages
+    if (tweetText === "" || tweetText === 'null') {
+      displayErrorMessage('Tweet content cannot be empty');
+      return;
+    }
+    if (tweetText.length > 140) {
+      displayErrorMessage('Tweet content exceeeds the maximum length of 140 characters');
+      return;
+    }
+    
+   
     //Send the tweet data using AJAX
     $.ajax({
       url: '/tweets',
@@ -23,9 +46,11 @@ $(document).ready(function () {
       },
     });
   };
-  //Even listener for form submission
-  $('form').submit(handleFormSubmit);
 
+  // Display the error message
+  const displayErrorMessage = function(message) {
+    $('#error-message').text(message).slideDown();
+  };
   //rendertweets
   const renderTweets = function(tweets) {
     // loops through tweets
@@ -33,11 +58,13 @@ $(document).ready(function () {
     // takes return value and appends it to the tweets container
 
     const $tweetsContainer = $('.tweets');
-    for (let tweet of tweets) {
-      let $tweet = createTweetElement(tweet);
+    $tweetsContainer.empty();
+    for (let i = tweets.length - 1; i >= 0; i--) {
+      let $tweet = createTweetElement(tweets[i]);
       $tweetsContainer.append($tweet);
     }
   };
+
 
   //Load tweets to fetch the tweets from server
   const loadTweets = function() {
@@ -49,18 +76,24 @@ $(document).ready(function () {
       }
     });
   };
-
-  const createTweetElement = function (tweet) {
+ 
+  const createTweetElement = function(tweet) {
+    //Escape function to re-encode text so that unsafe characters are converted into a safe "encoded" representation//
+   
     // console.log(tweet);
+    const safeContent = escape(tweet.content.text);
+    const safeName = escape(tweet.user.name);
+    const safeHandle = escape(tweet.user.handle);
+
     const $tweet = $(`
       <article class="tweet">
-        <header>
+        <div class="article-header">
           <img src="${tweet.user.avatars}" alt="Profile Image">
           <div class="tweet-header">
             <h3 class="tweet-author">${tweet.user.name}</h3>
             <p class="tweet-username">${tweet.user.handle}</p>
           </div>
-        </header>
+        </div>
         <div class="tweet-content">
           <p>${tweet.content.text}</p>
         </div>
@@ -74,9 +107,12 @@ $(document).ready(function () {
         </footer>
       </article>
     `);
-
+    console.log(escape('<script>alert("hello")</script>'));
     return $tweet;
   };
   
+  //Even listener for form submission
+  $('form').submit(handleFormSubmit);
+
   loadTweets();
 });
