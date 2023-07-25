@@ -3,8 +3,7 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-/* eslint-env jquery*/
-//accepting jquery --above comment//
+
 $(document).ready(function() {
   const escape = function(str) {
     let div = document.createElement("div");
@@ -80,8 +79,7 @@ $(document).ready(function() {
  
   const createTweetElement = function(tweet) {
     //Escape function to re-encode text so that unsafe characters are converted into a safe "encoded" representation//
-   
-    // console.log(tweet);
+  
     const safeContent = escape(tweet.content.text);
     const safeName = escape(tweet.user.name);
     const safeHandle = escape(tweet.user.handle);
