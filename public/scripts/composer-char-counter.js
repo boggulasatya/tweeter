@@ -12,6 +12,6 @@ $(document).ready(function () {
       counter.removeClass('invalid');
     }
   }
-
   $('#tweet-text').on('input', countCharacters);
+   
 });
