@@ -1,7 +1,7 @@
 /* remove nav background color */
 
 nav {
-  background-color: #4056A1;
+  /* background-color: #4056A1; */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -43,13 +43,16 @@ nav .tweet-text {
   margin-top: 30px !important;
   animation: arrowMovement 2s infinite alternate;
 }
+
 @keyframes arrowMovement {
   0% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(10px);
   }
+
   100% {
     transform: translateY(0);
   }
@@ -62,22 +65,23 @@ nav .tweet-text {
   transform: translateX(-440%) !important;
 }
 
-  
+
 @media (min-width: 768px) and (max-width: 1023px) {
   nav {
-    background-image: url("https://www.transparenttextures.com/patterns/elegant-grid.png");
-    background-color: #ff7f50;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 1.5em;
   }
-  nav .nav-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+
+  nav .tweet-text {
+    margin-left: 617px;
   }
-  .angle-down-container {
-    color: red;
 }
+
+/* Desktop styles */
+@media only screen and (min-width: 1024px) {
+  nav {
+    background-color: #4056A1;
+  }
 }
