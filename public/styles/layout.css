@@ -13,28 +13,24 @@ html {
   box-sizing: inherit;
 }
 
-nav {
-  display: flex;
-  align-items: center;
-  background-color: #3e4b95;
-  height: 120px;
-  padding: 1.5em;
-}
-
 .logo {
   font-family: 'Bungee', sans-serif;
   font-size: 24px;
   color: #ffffff;
 }
 
-.main-container {
-  width: 90%;
-  margin: 0 auto;
-  /* Center-align the main container */
+.tweet-text {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 18px;
+  color: #817b7b;
+  margin-left: 1100px;
 }
 
 main {
-  padding: 20px;
+  padding-top: 202px;
+  width: 90%;
+  margin: 0 auto;
+  align-items: center;
 }
 
 main p,
@@ -52,23 +48,7 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
-nav {
-  font-family: 'Bungee', sans-serif;
-}
 
-.header-main {
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  /* Center items vertically */
-}
-
-.tweet-text {
-  font-family: 'Source Sans Pro', sans-serif;
-  font-size: 18px;
-  color: #817b7b;
-  margin-left: 1100px;
-}
 
 form {
   width: 100%;
@@ -76,45 +56,28 @@ form {
   margin: 0 auto;
 }
 
-.container {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: space-between;
-}
-
-/*overriding*/
-body {
-  display: flex !important;
-  flex-flow: wrap !important;
-}
-
-nav {
-  width: 100% !important;
-  margin: 0 !important;
-}
-
-
-main {
-  width: 70% !important;
-  margin: 0 !important;
-  padding-top: 202px;
-}
-
-/* Tablet Styles  */
-
-body {
-  width: 100%;
-  align-items: center;
-  flex-direction: row;
-  justify-content: center;
-}
 
 
 /* Desktop Styles */
-@media only screen and (max-width: 1024px) {
-  .container {
-    flex-direction: column;
-    justify-content: space-between;
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+@media only screen and (min-width: 1024px) {
+  body {
+    align-items: flex-start;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding-top: 2px;
   }
+}
+
+/* Tablet Styles */
+@media (min-width: 768px) and (max-width: 1023px) {
+main {
+  padding-top: 14px;
+  width: 90%;
+  margin: 0 auto;
+}
 }

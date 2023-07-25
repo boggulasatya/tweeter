@@ -1,10 +1,12 @@
+/* remove nav background color */
+
 nav {
+  background-color: #4056A1;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 120px;
   width: 100%;
-  background-color: #4056A1;
   color: #FFFFFF;
   position: fixed;
   top: 0;
@@ -25,6 +27,8 @@ nav .logo {
 }
 
 nav .tweet-text {
+  display: flex;
+  justify-content: space-between;
   font-family: 'Source Sans Pro', sans-serif;
   color: #f4f1ec;
   font-size: 18px;
@@ -32,6 +36,9 @@ nav .tweet-text {
 }
 
 .angle-down-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   text-align: center !important;
   margin-top: 30px !important;
   animation: arrowMovement 2s infinite alternate;
@@ -52,6 +59,25 @@ nav .tweet-text {
 .fa-angle-double-down {
   font-size: 20px !important;
   color: red !important;
-  display: center !important;
   transform: translateX(-440%) !important;
+}
+
+  
+@media (min-width: 768px) and (max-width: 1023px) {
+  nav {
+    background-image: url("https://www.transparenttextures.com/patterns/elegant-grid.png");
+    background-color: #ff7f50;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5em;
+  }
+  nav .nav-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .angle-down-container {
+    color: red;
+}
 }

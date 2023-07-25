@@ -3,10 +3,9 @@
   flex-direction: column;
   align-items: flex-start;
   margin-top: 20px;
-  margin-left: 20px;
-  width: 300px;
-  padding-top: 20px;
-  
+  margin-left: 197px;
+  width: 537px;
+  padding-top: 20px; 
 }
 
 .new-tweet form {
@@ -22,21 +21,20 @@
 }
 
 .new-tweet textarea {
-  width: 313%;
-  height: 80px;
+  width: 158%;
+  height: 10px;
   resize: none;
   border: 10px;
   border-bottom: 2px solid #101010;
-  padding: 0.5em;
+  padding: 18px;
   font-size: 18px;
   background-color: #f4f1ec;
-  
 }
 
 .new-tweet .counter {
   display: flex;
   margin-top: 0.5em;
-  margin-right: 440px;
+  margin-left: 800px;
   color: black;
   font-size: bold;
 }
@@ -52,23 +50,14 @@
   color: red;
 }
 
-
-/*Section Tweets*/
-/*article {
-  border: 2px solid black;
-  margin-right: 1000px;
-  width: 900px;
-
-}*/
-
 .tweets {
   display: flex;
   flex-direction: column;
-  width: 90%;
-  border: 2px solid #f4f1ec;;
+  width: 100%;
+  /* border: 2px solid #f4f1ec; */
   border-radius: 0;
-  padding: 20px;
-  margin-left: 2px !important;
+  padding: 200px;
+  padding-top: 33px;
 }
 
 .tweets .tweet {
@@ -88,11 +77,10 @@
   font-family: Arial, sans-serif;
 }
 
-
-
 .tweets .tweet:hover {
   box-shadow: 10px 10px rgba(135, 149, 206, 0.5);
 }
+
 .tweets .article-header {
   padding-top: 10px;
   margin-bottom: 10px;
@@ -100,8 +88,8 @@
   background-color: #f4f1ec;
   flex-direction: row;
   display: flex;
- 
 } 
+
 .tweets .tweet header {
   display: flex;
   align-items: center;
@@ -127,10 +115,11 @@
   color: gray; 
   margin-right: 700px;
 }
-p.tweet-username {
+.tweets .tweet .tweet-header p.tweet-username {
+  margin-left: 450px;
+  margin-top: 10px;
   font-size: 14px;
   color: #888; 
-  margin-right: 800px;
 }
 
 .tweets .tweet .tweet-content p::after {
@@ -170,5 +159,46 @@ p.tweet-username {
   color: #c80c1e;
   padding: 5px;
   border: 1px solid #ef071e;
+  white-space: nowrap;
 }
 
+/* Tablet Styles */
+@media (min-width: 768px) and (max-width: 1023px) {
+  body {
+    width: 100%;
+    /* background-color: #ff7f50; */
+    /* background-image: url(https://www.transparenttextures.com/patterns/elegant-grid.png); */
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    justify-content: center;
+    align-items: center;
+    font-size: 11px;
+  }
+
+  .new-tweet {
+    width: 462px;
+    margin-left: -4px;
+    background-color: #f4f1ec; 
+  }
+
+  .tweets {
+    background-color: #f4f1ec; 
+    margin-left: -39px;
+    margin-right: -38px;
+    border: 0px;
+    width: 117%;
+    padding: 43px;
+  }
+  .new-tweet .counter {
+    margin-left: 643px;
+    background-color: #f4f1ec; 
+}
+.new-tweet.textarea{
+  width: 158%;
+}
+
+.tweets .tweet .tweet-header p.tweet-username {
+  margin-left: 540px; 
+}
+}
