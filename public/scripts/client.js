@@ -42,6 +42,7 @@ $(document).ready(function() {
         //handle response forms server
         console.log(response);
         $('#tweet-text').val('');
+        $('#counter').text("140");
         loadTweets();
       },
     });
