@@ -1,7 +1,4 @@
-/* remove nav background color */
-
 nav {
-  /* background-color: #4056A1; */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -65,7 +62,7 @@ nav .tweet-text {
   transform: translateX(-440%) !important;
 }
 
-
+/* Tbalet Styles */
 @media (min-width: 768px) and (max-width: 1023px) {
   nav {
     display: flex;
